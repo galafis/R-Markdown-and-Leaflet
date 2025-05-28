@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>35 Largest European Cities by Population</title>
+    
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" 
+          integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" 
+          crossorigin=""/>
+    
+    <!-- Leaflet JavaScript -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" 
+            integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" 
+            crossorigin=""></script>
+    
+    <!-- Custom CSS -->
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+        
+        .author {
+            font-style: italic;
+            margin: 10px 0;
+            font-size: 1.2rem;
+        }
+        
+        .date {
+            font-size: 1rem;
+            color: #ddd;
+        }
+        
+        .overview {
+            background-color: white;
+            padding: 25px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            line-height: 1.6;
+        }
+        
+        #map {
+            height: 600px;
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+        
+        .code-section {
+            background-color: white;
+            padding: 25px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        pre {
+            background-color: #f5f5f5;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            font-family: 'Courier New', Courier, monospace;
+            line-height: 1.4;
+        }
+        
+        code {
+            color: #e83e8c;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 30px;
+            background-color: #2c3e50;
+            color: white;
+        }
+        
+        .footer-link {
+            color: #3498db;
+            text-decoration: none;
+        }
+        
+        .footer-link:hover {
+            text-decoration: underline;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            #map {
+                height: 400px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>35 Largest European Cities by Population</h1>
+            <p class="author">By Gabriel Demetrios Lafis</p>
+            <p class="date">May 28, 2025</p>
+        </div>
+    </header>
+    
+    <div class="container">
+        <section class="overview">
+            <h2>Overview</h2>
+            <p>This interactive map displays the 35 largest European cities by population. The circles on the map are proportionate to the population size of each city. Click on any circle to see more detailed information about the city, including its population and country.</p>
+            <p>The visualization provides an intuitive way to understand the distribution and relative sizes of major urban centers across Europe. Cities are represented with their national flags and formatted population figures for better readability.</p>
+        </section>
+        
+        <div id="map"></div>
+        
+        <section class="code-section">
+            <h2>Data Processing</h2>
+            <p>The data for this visualization was processed using R. Below is the code used to prepare the data:</p>
+            <pre><code>cities <- read.csv("data/cities.csv")
+
+# Format population numbers with commas
+cities <- cities %>%
+  mutate(Population2 = format(Population, big.mark = ","))
+
+# Create popup content with HTML formatting
+cities <- cities %>%
+  mutate(Popup=paste("&lt;b&gt;", cities$City, "&lt;/b&gt;","&lt;BR&gt;", cities$Population2, "&lt;BR&gt;", "&lt;nobr&gt;",cities$Country, " ", 
+                    "&lt;img src='", cities$FlagURL, "' width='25' height='16.7'&gt;&lt;/nobr&gt;", sep=""))
+</code></pre>
+        </section>
+        
+        <section class="code-section">
+            <h2>Map Creation</h2>
+            <p>The interactive map was created using the Leaflet library. The code below demonstrates how the map was generated:</p>
+            <pre><code>cities %>%
+  leaflet(width = "100%") %>%
+  addTiles() %>%
+  addCircleMarkers(weight=1, radius = sqrt(cities$Population/20000), 
+                  lat = cities$Lat, lng = cities$Lng, 
+                  popup = cities$Popup)
+</code></pre>
+        </section>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Gabriel Demetrios Lafis. All rights reserved.</p>
+            <p>View the <a href="https://github.com/galafis/R-Markdown-and-Leaflet" class="footer-link">source code on GitHub</a></p>
+        </div>
+    </footer>
+    
+    <script>
+        // Load the data and create the map
+        fetch('data/cities.csv')
+            .then(response => response.text())
+            .then(csvData => {
+                // Parse CSV data
+                const cities = parseCSV(csvData);
+                
+                // Create the map
+                const map = L.map('map').setView([50.0755, 14.4378], 4);
+                
+                // Add the base map layer
+                L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                }).addTo(map);
+                
+                // Add circle markers for each city
+                cities.forEach(city => {
+                    const radius = Math.sqrt(city.Population / 20000);
+                    
+                    // Create popup content with HTML formatting
+                    const popupContent = `
+                        <b>${city.City}</b><br>
+                        ${formatNumber(city.Population)}<br>
+                        <nobr>${city.Country} <img src="${city.FlagURL}" width="25" height="16.7"></nobr>
+                    `;
+                    
+                    // Add circle marker
+                    L.circleMarker([city.Lat, city.Lng], {
+                        radius: radius,
+                        weight: 1,
+                        color: '#3388ff',
+                        fillColor: '#3388ff',
+                        fillOpacity: 0.5
+                    })
+                    .bindPopup(popupContent)
+                    .addTo(map);
+                });
+            })
+            .catch(error => console.error('Error loading the CSV file:', error));
+        
+        // Function to parse CSV data
+        function parseCSV(csvText) {
+            const lines = csvText.split('\n');
+            const headers = lines[0].split(',');
+            
+            return lines.slice(1).filter(line => line.trim() !== '').map(line => {
+                const values = line.split(',');
+                const city = {};
+                
+                headers.forEach((header, index) => {
+                    if (header === 'Population') {
+                        city[header] = parseInt(values[index], 10);
+                    } else {
+                        city[header] = values[index];
+                    }
+                });
+                
+                return city;
+            });
+        }
+        
+        // Function to format numbers with commas
+        function formatNumber(number) {
+            return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        }
+    </script>
+</body>
+</html>

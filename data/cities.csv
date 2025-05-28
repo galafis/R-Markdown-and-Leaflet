@@ -1,0 +1,36 @@
+City,Population,Country,Lat,Lng,FlagURL
+Istanbul,15029231,Turkey,41.0082,28.9784,https://upload.wikimedia.org/wikipedia/commons/b/b4/Flag_of_Turkey.svg
+Moscow,12615279,Russia,55.7558,37.6173,https://upload.wikimedia.org/wikipedia/commons/f/f3/Flag_of_Russia.svg
+London,9126366,United Kingdom,51.5074,-0.1278,https://upload.wikimedia.org/wikipedia/commons/a/ae/Flag_of_the_United_Kingdom.svg
+Saint Petersburg,5383890,Russia,59.9343,30.3351,https://upload.wikimedia.org/wikipedia/commons/f/f3/Flag_of_Russia.svg
+Berlin,3748148,Germany,52.5200,13.4050,https://upload.wikimedia.org/wikipedia/commons/b/ba/Flag_of_Germany.svg
+Madrid,3223334,Spain,40.4168,-3.7038,https://upload.wikimedia.org/wikipedia/commons/9/9a/Flag_of_Spain.svg
+Kyiv,2950800,Ukraine,50.4501,30.5234,https://upload.wikimedia.org/wikipedia/commons/4/49/Flag_of_Ukraine.svg
+Rome,2872800,Italy,41.9028,12.4964,https://upload.wikimedia.org/wikipedia/commons/0/03/Flag_of_Italy.svg
+Paris,2187526,France,48.8566,2.3522,https://upload.wikimedia.org/wikipedia/commons/c/c3/Flag_of_France.svg
+Bucharest,1883425,Romania,44.4268,26.1025,https://upload.wikimedia.org/wikipedia/commons/7/73/Flag_of_Romania.svg
+Minsk,1982444,Belarus,53.9045,27.5615,https://upload.wikimedia.org/wikipedia/commons/8/85/Flag_of_Belarus.svg
+Vienna,1911191,Austria,48.2082,16.3738,https://upload.wikimedia.org/wikipedia/commons/4/41/Flag_of_Austria.svg
+Hamburg,1841179,Germany,53.5511,9.9937,https://upload.wikimedia.org/wikipedia/commons/b/ba/Flag_of_Germany.svg
+Warsaw,1764615,Poland,52.2297,21.0122,https://upload.wikimedia.org/wikipedia/commons/1/12/Flag_of_Poland.svg
+Budapest,1752286,Hungary,47.4979,19.0402,https://upload.wikimedia.org/wikipedia/commons/c/c1/Flag_of_Hungary.svg
+Barcelona,1620343,Spain,41.3851,2.1734,https://upload.wikimedia.org/wikipedia/commons/9/9a/Flag_of_Spain.svg
+Munich,1471508,Germany,48.1351,11.5820,https://upload.wikimedia.org/wikipedia/commons/b/ba/Flag_of_Germany.svg
+Kharkiv,1446107,Ukraine,49.9935,36.2304,https://upload.wikimedia.org/wikipedia/commons/4/49/Flag_of_Ukraine.svg
+Milan,1395274,Italy,45.4642,9.1900,https://upload.wikimedia.org/wikipedia/commons/0/03/Flag_of_Italy.svg
+Prague,1301132,Czech Republic,50.0755,14.4378,https://upload.wikimedia.org/wikipedia/commons/c/cb/Flag_of_the_Czech_Republic.svg
+Nizhny Novgorod,1250619,Russia,56.2965,43.9361,https://upload.wikimedia.org/wikipedia/commons/f/f3/Flag_of_Russia.svg
+Kazan,1243500,Russia,55.7887,49.1221,https://upload.wikimedia.org/wikipedia/commons/f/f3/Flag_of_Russia.svg
+Sofia,1238438,Bulgaria,42.6977,23.3219,https://upload.wikimedia.org/wikipedia/commons/9/9a/Flag_of_Bulgaria.svg
+Brussels,1208542,Belgium,50.8503,4.3517,https://upload.wikimedia.org/wikipedia/commons/6/65/Flag_of_Belgium.svg
+Birmingham,1141816,United Kingdom,52.4862,-1.8904,https://upload.wikimedia.org/wikipedia/commons/a/ae/Flag_of_the_United_Kingdom.svg
+Cologne,1085664,Germany,50.9375,6.9603,https://upload.wikimedia.org/wikipedia/commons/b/ba/Flag_of_Germany.svg
+Naples,967069,Italy,40.8518,14.2681,https://upload.wikimedia.org/wikipedia/commons/0/03/Flag_of_Italy.svg
+Stockholm,965232,Sweden,59.3293,18.0686,https://upload.wikimedia.org/wikipedia/commons/4/4c/Flag_of_Sweden.svg
+Turin,870456,Italy,45.0703,7.6869,https://upload.wikimedia.org/wikipedia/commons/0/03/Flag_of_Italy.svg
+Marseille,869815,France,43.2965,5.3698,https://upload.wikimedia.org/wikipedia/commons/c/c3/Flag_of_France.svg
+Amsterdam,862965,Netherlands,52.3676,4.9041,https://upload.wikimedia.org/wikipedia/commons/2/20/Flag_of_the_Netherlands.svg
+Riga,632614,Latvia,56.9496,24.1052,https://upload.wikimedia.org/wikipedia/commons/8/84/Flag_of_Latvia.svg
+Zagreb,802338,Croatia,45.8150,15.9819,https://upload.wikimedia.org/wikipedia/commons/1/1b/Flag_of_Croatia.svg
+Zaragoza,674997,Spain,41.6488,-0.8891,https://upload.wikimedia.org/wikipedia/commons/9/9a/Flag_of_Spain.svg
+Seville,688711,Spain,37.3891,-5.9845,https://upload.wikimedia.org/wikipedia/commons/9/9a/Flag_of_Spain.svg
